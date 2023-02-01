@@ -1,10 +1,6 @@
-
-body {
- 
-}
-
 .nav-container {
   display: flex;
+  position: fixed;
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
