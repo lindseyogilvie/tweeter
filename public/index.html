@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,11 +42,17 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
+    <br>
     <main class="container">
-      <strong>About Tweeter</strong>
-      <p><strong>Welcome to Tweeter!</strong> We are a cutting edge tech company hell bent on ending civil discourse as we know it.</p>
-      <br>
-      <p>User experience is everything to us. If a day goes by where you are not cyber-bullied, please let us know immediately. We will reach out to our list of professional bullies and have one of them contact you within 24 hrs.</p>
+      <section class="new-tweet">
+        <form action="/tweets" method="POST">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="tweet-admin">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
