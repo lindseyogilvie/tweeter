@@ -78,4 +78,23 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
+
+
+  $("#target").submit(function(event) {
+    event.preventDefault();
+    const tweet = $(this).serialize();
+    console.log(tweet)
+    $.post('/tweets', tweet, () => {
+      console.log("Tweet" + tweet);
+    })
+  })
+
+  const loadTweets = function() {
+    $.get('/tweets', () => {
+
+    })
+  }
+
+  loadTweets();
+
 });
