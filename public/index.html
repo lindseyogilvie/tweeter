@@ -48,6 +48,11 @@
     <br>
     <main class="container">
       <section class="new-tweet">
+        <div class="validation-error">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="err-message"></span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
         <form id="target" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>

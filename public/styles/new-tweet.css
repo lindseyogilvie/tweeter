@@ -37,4 +37,19 @@ textarea::-webkit-input-placeholder {
   font-weight: bold;
 }
 
+/* Validation Error Styling */
+
+.validation-error {
+  display: none;
+  border: 4px solid red;
+  color: red;
+  height: 50px;
+  padding: 4px 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+div.validation-error i {
+  color: red;
+}
 
