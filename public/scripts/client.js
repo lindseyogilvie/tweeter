@@ -44,12 +44,22 @@ $(document).ready(function() {
   };
 
   $("#target").submit(function(event) {
+
     event.preventDefault();
-    const tweet = $(this).serialize();
-    console.log(tweet)
-    $.post('/tweets', tweet, () => {
-      console.log("Tweet" + tweet);
-    })
+    // Cannot submit form if tweet is empty, "" or null
+    if (!$('#tweet-text').val()) {
+      alert("Tweet is empty");
+    }
+    // Cannot submit form if tweet exceeds maximum length"
+    else if ($('.counter').text() < 0) {
+      alert("Tweet has too many characters");
+    }
+    else {
+      const tweet = $(this).serialize();
+      $.post('/tweets', tweet, () => {
+        console.log("Tweet:" + tweet);
+      })
+    }
   })
   
   const loadTweets = function() {
