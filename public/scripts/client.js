@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-
 $(document).ready(function() {
   
   const renderTweets = function(tweets) {
@@ -57,7 +56,9 @@ $(document).ready(function() {
     else {
       const tweet = $(this).serialize();
       $.post('/tweets', tweet, () => {
-        console.log("Tweet:" + tweet);
+        loadTweets();
+        $('#tweet-text').val('');
+        $('.counter').text(140);
       })
     }
   })
