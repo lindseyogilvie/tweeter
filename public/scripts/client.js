@@ -6,7 +6,14 @@
 
 $(document).ready(function() {
   
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   const renderTweets = function(tweets) {
+    $('.tweet-feed').empty();
     // Iterate through array of tweet objects
     for (let tweet of tweets) {
       // Pass each tweet object into the createTweetElement
@@ -26,7 +33,7 @@ $(document).ready(function() {
         </div>
         <span>${tweet.user.handle}</span>
       </header>
-      <div class="tweet-body">${tweet.content.text}</div>
+      <div class="tweet-body">${escape(tweet.content.text)}</div>
       <footer>
         <span>${timeago.format(tweet.created_at)}</span>
         <div>
