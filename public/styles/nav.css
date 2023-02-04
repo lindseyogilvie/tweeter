@@ -37,10 +37,20 @@
   }
 }
 
-/* Mobile Styles */
+/* Tablet Styles */
 @media only screen and (max-width: 1023px) {
   .nav-container {
     background-color: #EEB920;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 500px) {
+  .nav-container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 12px;
   }
 }
