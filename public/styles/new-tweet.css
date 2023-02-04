@@ -1,3 +1,8 @@
+.new-tweet {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 #tweet-text {
   width: 100%;
   background-color: #f4f1ec;
@@ -37,6 +42,11 @@ textarea::-webkit-input-placeholder {
   font-weight: bold;
 }
 
+.tweet-form {
+  display: block;
+  width: 100%;
+}
+
 /* Validation Error Styling */
 
 .validation-error {
@@ -53,3 +63,15 @@ div.validation-error i {
   color: red;
 }
 
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    display: flex;
+    width: 100%;
+    margin-top: 130px;
+    margin-right: 20px;
+    padding: 20px;
+    padding-left: 0px;
+  }
+}

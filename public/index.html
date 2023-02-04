@@ -26,7 +26,6 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav-container">
@@ -36,34 +35,36 @@
           <i class="fa-solid fa-angles-down"></i>
       </span>
     </nav>
-    <header class="header-container">
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <div>
-        <span><strong>Lindsey</strong> Ogilvie</span>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <br>
-    <main class="container">
-      <section class="new-tweet">
-        <div class="validation-error">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span id="err-message"></span>
-          <i class="fa-solid fa-triangle-exclamation"></i>
+    <div class="page-content">
+      <header class="header-container">
+        <div>
+          <img src="/images/profile-hex.png">
         </div>
-        <form id="target" action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="tweet-admin">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text"></output>
-          </div>
-        </form>
-      </section>
+        <div>
+          <span><strong>Lindsey</strong> Ogilvie</span>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
       <br>
-      <section class="tweet-feed"></section>
-    </main>
+      <main class="container">
+        <section class="new-tweet">
+          <div class="validation-error">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="err-message"></span>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <form class="tweet-form" id="target" action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="tweet-admin">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"></output>
+            </div>
+          </form>
+        </section>
+        <br>
+        <section class="tweet-feed"></section>
+      </main>
+    </div>
   </body>
 </html>

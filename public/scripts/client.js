@@ -50,15 +50,25 @@ $(document).ready(function() {
   };
 
   $("#target").submit(function(event) {
-
+    $('.validation-error').slideUp();
     event.preventDefault();
     // Cannot submit form if tweet is empty, "" or null
     if (!$('#tweet-text').val()) {
-      alert("Tweet is empty");
+      $('.validation-error').slideDown("fast");
+      $('.validation-error').html(`
+        <i class="fa-solid fa-triangle-exclamation"></i> 
+        Tweets cannot be empty. Share what's on your mind!
+        <i class="fa-solid fa-triangle-exclamation"></i> `);
+      return false;
     }
     // Cannot submit form if tweet exceeds maximum length"
     else if ($('.counter').text() < 0) {
-      alert("Tweet has too many characters");
+      $('.validation-error').slideDown("fast");
+      $('.validation-error').html(`
+      <i class="fa-solid fa-triangle-exclamation"></i> 
+      Tweet exceeds the 140 character limit. Summarize your thoughts!
+      <i class="fa-solid fa-triangle-exclamation"></i> `);
+      return false;
     }
     else {
       const tweet = $(this).serialize();
