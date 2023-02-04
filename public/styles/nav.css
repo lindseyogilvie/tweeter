@@ -38,7 +38,7 @@
 }
 
 /* Mobile Styles */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .nav-container {
     background-color: #EEB920;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
